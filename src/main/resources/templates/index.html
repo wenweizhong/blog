@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragments :: head(~{::title})">
+	<title>首页</title>
+</head>
+<body>
+	<!-- 导航 -->
+	<nav th:replace="_fragments :: menu(1)"></nav>
+	<!--中间内容-->
+	<!--css提供了-->
+	<div class="m-container m-padded-tb-big animated fadeInLeft" >
+		<div class="ui container">
+			<div class="ui grid stackable m-opacity-mini">
+				<!-- 左边博客列表-->
+				<div class="eleven wide column">
+					<!-- 头 -->
+					<div class="ui top attached segment">
+						<div class="ui middle aligned one column grid">
+							<div class="center aligned column">
+								共 <h2 class="ui orange header m-inline-block m-text-thin" th:text="${pageInfo.total}">14</h2> 篇博客
+							</div>
+						</div>
+					</div>
+					<!-- content -->
+					<div class="ui attached segment">
+						<div class="ui padded vertical segment m-padded-tb-big" th:each="blog : ${pageInfo.list}">
+							<div class="ui mobile reversed grid stackable">
+								<div class="ui eleven wide column">
+									<h3 class="ui header"><a th:href="@{/blog/{id}(id=${blog.id})}" class="m-black" target="_blank" th:text="${blog.title}">夏目漱石心</a></h3>
+									<p class="m-text" th:text="|${blog.description}......|">正确做好任何一件事情的前提是清晰、正确的理解目标。而事实是，我们很多人很多时候根本没有对目标正确的定义，甚至根本从来就没有想过，只是大家都那么做而已…...</p>
+									<div class="ui grid">
+										<div class="eleven wide column">
+											<div class="ui horizontal link list">
+												<div class="item">
+													<img class="ui avatar image" src="https://unsplash.it/100/100?image=1005" th:src="@{${blog.user.avatar}}" alt=""/>
+													<div class="content">
+														<a class="header" th:text="${blog.user.nickname}">温伟忠</a>
+													</div>
+												</div>
+												<div class="item" >
+													<i class="calendar icon" ></i><span th:text="${#dates.format(blog.updateTime, 'yyyy-MM-dd')}"></span>
+												</div>
+												<div class="item">
+													<i class="eye icon"></i><span th:text="${blog.views}"></span>
+												</div>
+											</div>
+										</div>
+										<div class="right five wide column">
+											<a href="#" target="_blank" class="ui teal basic label m-padded-tiny m-text-thin" th:text="${blog.type.name}">认知升级</a>
+										</div>
+									</div>
+								</div>
+								<div class="ui five wide column">
+									<a href="#" target="_blank">
+										<img class="ui rounded image" src="https://unsplash.it/800/400?image=1005" alt=""/>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- 底部内容 -->
+					<div class="ui bottom attached segment">
+						<div class="ui middle aligned three column grid">
+							<div class="left aligned column">
+								<button class="ui mini teal basic button" th:href="@{/(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1)}">上一页</button>
+							</div>
+							<div class="center aligned column">
+								<p><span th:text="${pageInfo.pageNum}"></span>/<span th:text="${pageInfo.pages}"></span></p>
+							</div>
+							<div class="right aligned column">
+								<button class="ui mini teal basic button" th:href="@{/(pageNum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages})}">下一页</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 右边的top -->
+				<div class="five wide column">
+					<!-- 分类 -->
+					<div class="ui segments">
+						<div class="ui secondary segment">
+							<div class="ui two column grid">
+								<div class="column">
+									<i class="idea icon"></i>分类
+								</div>
+								<div class="right aligned column">
+									<a href="" target="_blank" th:href="@{types/-1}">more <i class="angle double right icon"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="ui teal segment">
+							<div class="ui fluid vertical menu">
+								<a href="#" th:href="@{/types/{id}(id=${type.id})}" target="_blank" class="item" th:each="type : ${types}" >
+									<span th:text="${type.name}">学习日志</span>
+									<div class="ui teal basic left pointing label" th:text="${#arrays.length(type.blogs)}">13</div>
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- 标签 -->
+					<div class="ui segments m-margin-top-large">
+						<div class="ui secondary segment">
+							<div class="ui two column grid">
+								<div class="column">
+									<i class="tags icon"></i>标签
+								</div>
+								<div class="right aligned column">
+									<a href="#" th:href="@{tags/-1}" target="_blank">more <i class="angle double right icon"></i></a>
+								</div>
+							</div>
+						</div>
+						<div class="ui teal segment">
+							<a href="#" th:href="@{/tags/{id}(id=${tag.id})}" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny"
+								th:each="tag : ${tags}" >
+								<span th:text="${tag.name}"></span>
+								<div class="detail" th:text="${#arrays.length(tag.blogs)}">23</div>
+							</a>
+						</div>
+					</div>
+
+					<!-- 最新推荐 -->
+					<div class="ui segments m-margin-top-large">
+						<div class="ui secondary segment">
+							<div class="column">
+								<i class="bookmark icon"></i>最新推荐
+							</div>
+						</div>
+						<div class="ui segment" th:each="recommendBlog : ${recommendBlogs}">
+							<a href="#" th:href="@{/blog/{id}(id=${recommendBlog.id})}"
+							   th:text="${recommendBlog.title}"
+							   target="_blank" class=" m-black m-text-thin">用户故事</a>
+						</div>
+					</div>
+
+					<!-- 静态二维码 -->
+					<div class="ui horizontal divider header m-margin-top-large">扫码关注我</div>
+					<div class="ui card centered" style="width: 11em">
+						<img  th:src="@{/images/wechat.png}" alt="" class="ui rounded image"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- 底部 -->
+
+	<footer th:replace="_fragments :: footer">
+	</footer>
+</body>
+<!--/*/<th:block th:replace="_fragments :: script">/*/-->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
+<!--/*/</th:block>/*/-->
+
+<!-- 此处Bug还未处理 -->
+<script>
+	$('.menu.toggle').click(function (){
+		/* 将css样式进行切换 */
+		$('.m-item').toggleClass('m-mobile-hide');
+	});
+</script>
+</html>

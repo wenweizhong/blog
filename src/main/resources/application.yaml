@@ -1,0 +1,22 @@
+spring:
+  #配置模板引擎
+  thymeleaf:
+    mode: HTML
+  #数据库配置
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/blog?characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: zhong990529
+
+#mybatis
+mybatis:
+  mapper-locations: classpath:mapper/*.xml #指定Mybatis的核心配置文件
+  type-aliases-package: cn.wen.pojo #设置别名
+
+logging:
+  level:
+    root:
+    com.blog:
+  file:
+    path: log/blog.log
