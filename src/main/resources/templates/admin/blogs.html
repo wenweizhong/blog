@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="_fragments :: head(~{::title})">
+<head th:replace="admin/_fragments :: head(~{::title})">
 	<title>博客管理</title>
 </head>
 <body>
 	<!-- 导航 -->
-	<nav th:replace="_fragments :: menu(1)"></nav>
+	<nav th:replace="admin/_fragments :: menu(1)"></nav>
 
 	<div class="ui attached pointing menu">
 		<div class="ui container">
@@ -85,10 +85,10 @@
 		</div>
 	</div>
 	<!-- 底部 -->
-	<footer th:replace="_fragments :: footer"></footer>
+	<footer th:replace="admin/_fragments :: footer"></footer>
 
 	<!--scripts-->
-	<th:block th:replace="_fragments :: script"></th:block>
+	<th:block th:replace="admin/_fragments :: script"></th:block>
 <!-- 此处Bug还未处理 -->
 <script>
 	$('.menu.toggle').click(function (){

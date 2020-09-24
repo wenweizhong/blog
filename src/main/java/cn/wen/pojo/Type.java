@@ -16,7 +16,7 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Type {
+public class Type{
 
     private Long id;
     private String name;
