@@ -1,100 +1,25 @@
-2020-09-24 15:45:14.527  INFO 7844 --- [restartedMain] cn.wen.MyblogApplication                 : Starting MyblogApplication on fatty with PID 7844 (F:\code\idea\myblog\target\classes started by 温。 in F:\code\idea\myblog)
-2020-09-24 15:45:14.533  INFO 7844 --- [restartedMain] cn.wen.MyblogApplication                 : No active profile set, falling back to default profiles: default
-2020-09-24 15:45:14.577  INFO 7844 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-09-24 15:45:14.578  INFO 7844 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-09-24 15:45:15.484  INFO 7844 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-09-24 15:45:15.489  INFO 7844 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-09-24 15:45:15.490  INFO 7844 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
-2020-09-24 15:45:15.491  INFO 7844 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.21] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
-2020-09-24 15:45:15.491  INFO 7844 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
-2020-09-24 15:45:15.491  INFO 7844 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-09-24 15:45:15.491  INFO 7844 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-09-24 15:45:15.494  INFO 7844 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
-2020-09-24 15:45:15.551  INFO 7844 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-09-24 15:45:15.552  INFO 7844 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 973 ms
-2020-09-24 15:45:15.953  INFO 7844 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-09-24 15:45:15.994  INFO 7844 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-09-24 15:45:16.179  WARN 7844 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2020-09-24 15:45:16.198  WARN 7844 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
-2020-09-24 15:45:16.199  INFO 7844 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-09-24 15:45:16.201  INFO 7844 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2020-09-24 15:45:16.217  INFO 7844 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2020-09-24 15:45:16.220 ERROR 7844 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Web server failed to start. Port 8080 was already in use.
-
-Action:
-
-Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
-
-2020-09-24 15:46:33.407  INFO 2232 --- [restartedMain] cn.wen.MyblogApplication                 : Starting MyblogApplication on fatty with PID 2232 (F:\code\idea\myblog\target\classes started by 温。 in F:\code\idea\myblog)
-2020-09-24 15:46:33.409  INFO 2232 --- [restartedMain] cn.wen.MyblogApplication                 : No active profile set, falling back to default profiles: default
-2020-09-24 15:46:33.442  INFO 2232 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-09-24 15:46:33.442  INFO 2232 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-09-24 15:46:34.232  INFO 2232 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-09-24 15:46:34.239  INFO 2232 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-09-24 15:46:34.240  INFO 2232 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
-2020-09-24 15:46:34.242  INFO 2232 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.21] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
-2020-09-24 15:46:34.242  INFO 2232 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
-2020-09-24 15:46:34.242  INFO 2232 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-09-24 15:46:34.243  INFO 2232 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-09-24 15:46:34.246  INFO 2232 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
-2020-09-24 15:46:34.305  INFO 2232 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-09-24 15:46:34.305  INFO 2232 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 863 ms
-2020-09-24 15:46:34.618  INFO 2232 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-09-24 15:46:34.658  INFO 2232 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-09-24 15:46:34.789  WARN 2232 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
-2020-09-24 15:46:34.809  WARN 2232 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 8080 is already in use
-2020-09-24 15:46:34.811  INFO 2232 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-09-24 15:46:34.813  INFO 2232 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2020-09-24 15:46:34.831  INFO 2232 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2020-09-24 15:46:34.834 ERROR 2232 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Web server failed to start. Port 8080 was already in use.
-
-Action:
-
-Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
-
-2020-09-24 15:50:35.242  INFO 9356 --- [restartedMain] cn.wen.MyblogApplication                 : Starting MyblogApplication on fatty with PID 9356 (F:\code\idea\myblog\target\classes started by 温。 in F:\code\idea\myblog)
-2020-09-24 15:50:35.242  INFO 9356 --- [restartedMain] cn.wen.MyblogApplication                 : No active profile set, falling back to default profiles: default
-2020-09-24 15:50:35.306  INFO 9356 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2020-09-24 15:50:35.307  INFO 9356 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2020-09-24 15:50:36.646  INFO 9356 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-09-24 15:50:36.653  INFO 9356 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-09-24 15:50:36.653  INFO 9356 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
-2020-09-24 15:50:36.655  INFO 9356 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.21] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
-2020-09-24 15:50:36.655  INFO 9356 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
-2020-09-24 15:50:36.655  INFO 9356 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
-2020-09-24 15:50:36.655  INFO 9356 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
-2020-09-24 15:50:36.660  INFO 9356 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
-2020-09-24 15:50:36.716  INFO 9356 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-09-24 15:50:36.716  INFO 9356 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1409 ms
-2020-09-24 15:50:37.072  INFO 9356 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-09-24 15:50:37.112  INFO 9356 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
-2020-09-24 15:50:37.252  INFO 9356 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2020-09-24 15:50:37.279  INFO 9356 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-09-24 15:50:37.292  INFO 9356 --- [restartedMain] cn.wen.MyblogApplication                 : Started MyblogApplication in 2.356 seconds (JVM running for 3.464)
-2020-09-24 15:50:58.388  INFO 9356 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-09-24 15:50:58.389  INFO 9356 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-09-24 15:50:58.394  INFO 9356 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-2020-09-24 15:50:58.424  INFO 9356 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-09-24 15:50:58.711  INFO 9356 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-09-24 15:51:18.528  WARN 9356 --- [http-nio-8080-exec-5] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [209] milliseconds.
-2020-09-24 15:52:16.135  WARN 9356 --- [http-nio-8080-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+2020-09-25 08:24:16.600  INFO 12432 --- [restartedMain] cn.wen.MyblogApplication                 : Starting MyblogApplication on fatty with PID 12432 (F:\code\idea\myblog\target\classes started by 温。 in F:\code\idea\myblog)
+2020-09-25 08:24:16.610  INFO 12432 --- [restartedMain] cn.wen.MyblogApplication                 : No active profile set, falling back to default profiles: default
+2020-09-25 08:24:16.656  INFO 12432 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-09-25 08:24:16.656  INFO 12432 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-09-25 08:24:18.526  INFO 12432 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-09-25 08:24:18.536  INFO 12432 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-09-25 08:24:18.536  INFO 12432 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.38]
+2020-09-25 08:24:18.536  INFO 12432 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : An older version [1.2.21] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.23]
+2020-09-25 08:24:18.536  INFO 12432 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : Loaded Apache Tomcat Native library [1.2.21] using APR version [1.6.5].
+2020-09-25 08:24:18.536  INFO 12432 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true].
+2020-09-25 08:24:18.536  INFO 12432 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2020-09-25 08:24:18.809  INFO 12432 --- [restartedMain] o.a.catalina.core.AprLifecycleListener   : OpenSSL successfully initialized [OpenSSL 1.1.1a  20 Nov 2018]
+2020-09-25 08:24:18.863  INFO 12432 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-09-25 08:24:18.863  INFO 12432 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2206 ms
+2020-09-25 08:24:19.213  INFO 12432 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-09-25 08:24:19.264  INFO 12432 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-09-25 08:24:19.518  INFO 12432 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2020-09-25 08:24:19.557  INFO 12432 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-09-25 08:24:19.562  INFO 12432 --- [restartedMain] cn.wen.MyblogApplication                 : Started MyblogApplication in 3.412 seconds (JVM running for 4.756)
+2020-09-25 08:24:30.302  INFO 12432 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-09-25 08:24:30.303  INFO 12432 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-09-25 08:24:30.309  INFO 12432 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
+2020-09-25 08:24:30.350  INFO 12432 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-09-25 08:24:30.826  INFO 12432 --- [http-nio-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-09-25 08:24:46.728  WARN 12432 --- [http-nio-8080-exec-10] o.a.c.util.SessionIdGeneratorBase        : Creation of SecureRandom instance for session ID generation using [SHA1PRNG] took [214] milliseconds.

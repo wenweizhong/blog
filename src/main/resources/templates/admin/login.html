@@ -1,56 +1,63 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="admin/_fragments :: head(~{::title})">
-    <title>博客管理登录</title>
+
+<head th:replace="/admin/_fragments :: head(~{::title})">
+    <title>后台登录</title>
 </head>
 
-<body class="">
-
-<br>
-<br>
-<br>
-<div class="m-container-small m-padded-tb-massive disabled" style="max-width: 30em !important;">
-    <div class="ur container">
-        <div class="ui middle aligned center aligned grid">
-            <div class="column">
-                <h2 class="ui teal image header">
-                    <div class="content">
-                        管理后台登录
-                    </div>
-                </h2>
-                <form class="ui large form" method="post" action="#" th:action="@{/admin/login}">
-                    <div class="ui  segment">
-                        <div class="field">
-                            <div class="ui left icon input">
-                                <i class="user icon"></i>
-                                <input type="text" name="username" placeholder="用户名">
-                            </div>
+<body>
+    <nav th:fragment="menu(n)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small m-opacity-tiny" >
+        <div class="ui container">
+            <div class="ui inverted secondary stackable menu">
+                <h2 class="ui teal header item">管理后台</h2>
+                <a href="#" th:href="@{/admin/blogs}" class="m-item item m-mobile-hide" th:classappend="${n==1}?'active'"><i class="mini home icon"></i>博客</a>
+                <a href="#" th:href="@{/admin/types}" class="m-item item m-mobile-hide" th:classappend="${n==2}?'active'"><i class="mini idea icon"></i>分类</a>
+                <a href="#" th:href="@{/admin/tags}" class="m-item item m-mobile-hide" th:classappend="${n==3}?'active'"><i class="mini tags icon"></i>标签</a>
+            </div>
+        </div>
+        <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+            <i class="sidebar icon"></i>
+        </a>
+    </nav>
+    <br><br><br>
+    <!--登录表单-->
+    <div class="m-container-small m-padded-tb-massive disabled" style="max-width: 30em !important;">
+        <div class="ur container">
+            <div class="ui middle aligned center aligned grid">
+                <div class="column">
+                    <h2 class="ui teal image header">
+                        <div class="content">
+                            管理后台登录
                         </div>
-                        <div class="field">
-                            <div class="ui left icon input">
-                                <i class="lock icon"></i>
-                                <input type="password" name="password" placeholder="密码">
+                    </h2>
+                    <form class="ui large form" method="post" action="#" th:action="@{/admin/login}">
+                        <div class="ui  segment">
+                            <div class="field">
+                                <div class="ui left icon input">
+                                    <i class="user icon"></i>
+                                    <input type="text" name="username" placeholder="用户名">
+                                </div>
                             </div>
+                            <div class="field">
+                                <div class="ui left icon input">
+                                    <i class="lock icon"></i>
+                                    <input type="password" name="password" placeholder="密码">
+                                </div>
+                            </div>
+                            <button class="ui fluid large teal submit button">登   录</button>
                         </div>
-                        <button class="ui fluid large teal submit button">登   录</button>
-                    </div>
+                        <div class="ui error mini message"></div>
 
-                    <div class="ui error mini message"></div>
-                    <div class="ui mini negative message" th:text="${msg}">用户名和密码错误</div>
-
-                </form>
-
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<!--/*/<th:block th:replace="_fragments :: script">/*/-->
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
-<!--/*/</th:block>/*/-->
-
+    <br><br><br>
+    <footer th:replace="admin/_fragments :: footer"></footer>
+    <script th:replace="admin/_fragments :: script"></script>
 <script>
+    function
     $('.ui.form').form({
         fields : {
             username : {

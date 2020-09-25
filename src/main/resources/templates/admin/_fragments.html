@@ -13,7 +13,7 @@
 <body>
 
 <!--头部导航-->
-<nav th:fragment="menu(n)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small m-opacity-mini" >
+<nav th:fragment="menu(n)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small m-opacity-tiny" >
     <div class="ui container">
         <div class="ui inverted secondary stackable menu">
             <h2 class="ui teal header item">管理后台</h2>
@@ -39,13 +39,13 @@
     </a>
 </nav>
 <!--导航-->
-<footer th:fragment="footer" class="ui inverted vertical segment m-padded-tb-maxssive m-opacity-mini">
+<footer th:fragment="footer" class="ui inverted vertical segment m-padded-tb-maxssive m-opacity-mini animated fadeInUp">
     <div class="ui center aligned container">
         <div class="ui inverted divided stackable grid">
             <div class="three wide column">
                 <div class="ui inverted link list">
                     <div class="item">
-                        <img class="ui rounded image" th:src="@{images/wechat.png}" alt="" style="width: 100px">
+                        <img class="ui rounded image" th:src="@{../static/images/wechat.png}" alt="" style="width: 100px">
                     </div>
                 </div>
             </div>
