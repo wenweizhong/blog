@@ -1,6 +1,7 @@
 package cn.wen.service;
 
 import cn.wen.pojo.Blog;
+import org.apache.ibatis.javassist.NotFoundException;
 
 import java.util.List;
 import java.util.Map;
@@ -14,7 +15,7 @@ public interface BlogService {
     Blog getBlog(Long id);
 
     /*前端展示博客*/
-    Blog getDetailedBlog(Long id);
+    Blog getDetailedBlog(Long id) throws NotFoundException;
 
     /*获得全部的博客*/
     List<Blog> getAllblog();
@@ -44,7 +45,7 @@ public interface BlogService {
 
     int updateBlog(Blog blog);
 
-    int deleteBlog(Blog blog);
+    int deleteBlog(Long id);
 
     /*后台搜索博客*/
     List<Blog> searchAllBlog(Blog blog);

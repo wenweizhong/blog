@@ -8,6 +8,7 @@ import cn.wen.service.TagService;
 import cn.wen.service.TypeService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.apache.ibatis.javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
@@ -64,7 +65,7 @@ public class IndexController {
     }
 
     @GetMapping("/blog/{id}")
-    public String toLogin(@PathVariable Long id, Model model){
+    public String toLogin(@PathVariable Long id, Model model) throws NotFoundException {
         Blog blog = blogService.getDetailedBlog(id);
         model.addAttribute("blog", blog);
         return "blog";

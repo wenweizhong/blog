@@ -18,7 +18,7 @@ public class TypeServiceImpl implements TypeService {
     private TypeDao typeDao;
     @Override
     public int saveType(Type type) {
-        return 0;
+        return typeDao.saveType(type);
     }
 
     @Override
@@ -28,12 +28,12 @@ public class TypeServiceImpl implements TypeService {
 
     @Override
     public Type getTypeByName(String name) {
-        return null;
+        return typeDao.getTypeByName(name);
     }
 
     @Override
     public List<Type> getAllType() {
-        return null;
+        return typeDao.getAllType();
     }
 
     @Override
@@ -43,11 +43,11 @@ public class TypeServiceImpl implements TypeService {
 
     @Override
     public int updateType(Type type) {
-        return 0;
+        return typeDao.updateType(type);
     }
 
     @Override
     public int deleteType(Long id) {
-        return 0;
+        return typeDao.deleteType(id);
     }
 }
