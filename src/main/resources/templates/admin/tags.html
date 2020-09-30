@@ -1,157 +1,88 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head th:replace="_fragments :: head(~{::title})">
+<head th:replace="admin/_fragments :: head(~{::title})">
 	<title>标签管理</title>
 </head>
+
 <body>
-	<nav th:replace="_fragments :: menu(3)"></nav>
-	<!-- 中间内容 -->
-	<div class="m-container-small m-padded-tb-big animated fade">
-		<div class="ui container">
-			<!-- header -->
-			<div class="ui top attached segment">
-				<div class="ui middle aligned two column grid">
-					<div class="column">
-						<h3 class="ui teal header">标签</h3>
-					</div>
-					<div class="right aligned column">
-						共<h2 class="ui orange header m-inline-block m-text-thin">14</h3>个
-					</div>
-				</div>
-			</div>
-			<div class="ui attached segment m-padded-tb-large">
-				<a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny">
-					方法论
-					<div class="detail">23</div>							
-				</a>
-				<a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny">
-					方法论
-					<div class="detail">23</div>							
-				</a>
-				<a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny">
-					方法论
-					<div class="detail">23</div>							
-				</a>
-				<a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny">
-					方法论
-					<div class="detail">23</div>							
-				</a>
-				<a href="#" target="_blank" class="ui teal basic left pointing label m-margin-tb-tiny">
-					方法论
-					<div class="detail">23</div>							
-				</a>
-			</div>
-			<div class="ui top attached teal segment">
-				<div class="ui padded vertical segment m-padded-tb-big <m-mobile-lr-clear></m-mobile-lr-clear>">
-					<div class="ui mobile reversed grid stackable">
-						<div class="ui eleven wide column">
-							<h3 class="ui header">夏目漱石心</h3>-
-							<p>如果我是想象的那种人，我就不会那么痛苦了.如果我是想象的那种人，我就不会那么痛苦了.如果我是想象的那种人，我就不会那么痛苦了</p>
-							<div class="ui stackable grid">
-								<div class="row">
-									<div class="eleven wide column">
-										<div class="ui mini horizontal link list">
-											<div class="item">
-												<img class="ui avatar image" src="https://unsplash.it/100/100?image=1005" alt=""/>
-												<div class="content">
-													<a class="header">温伟忠</a>
-												</div>
-											</div>
-											<div class="item">
-												<i class="calendar icon"></i> 2017-10-01
-											</div>
-											<div class="item">
-												<i class="eye icon"></i>2000
-											</div>
-										</div>
-									</div>
-									<div class="right aligned five wide column">
-										<a href="#" target="_blank" class="ui teal basic label m-padded-tiny m-text-thin">认知升级</a>
-									</div>
-								</div>
-								<div class="row">
-									<div class="column">
-										<a class="ui basic teal left pointing label m-padded-mini m-text-thin">方法论</a>
-									</div>
-								</div>
-								
-							</div>
-							
+<!-- 导航 -->
+<nav th:replace="admin/_fragments :: menu(3)"></nav>
+
+<div class="ui attached pointing menu">
+	<div class="ui container">
+		<div class="right menu">
+			<a class="item" href="#" th:href="@{/admin/tags/input}">新增</a>
+			<a class="active teal item" href="#" th:href="@{/admin/tags}">列表</a>
+		</div>
+	</div>
+</div>
+<!-- 中间内容 -->
+<div class="m-container-small m-padded-tb-big">
+	<div class="ui container">
+		<div class="table-container">
+			<table class="ui center aligned compact celled teal table">
+				<thead>
+				<tr>
+					<th></th>
+					<th>名称</th>
+					<th>操作</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr th:each="tag, iterStat : ${pageInfo.list}">
+					<td th:text="${iterStat.count}"></td>
+					<td th:text="${tag.name}"></td>
+					<td>
+						<a href="#" th:href="@{/admin/tags/{id}/input(id=${tag.id})}" class="ui mini teal basic button">修改</a>
+						<a href="#" th:href="@{/admin/tags/{id}/delete(id=${tag.id})}" class="ui mini red basic button">删除</a>
+					</td>
+				</tr>
+				</tbody>
+				<tfoot>
+				<tr class="ui center aligned">
+					<th colspan="7">
+						<div class="ui center aligned pagination menu">
+							<div class="left aligned item"><a th:href="@{/admin/tags}">首页</a></div>
+							<div class="item"><a th:href="@{/admin/tags(pagenum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1)}">上一页</a> </div>
+							<div class="item"><p><span th:text="${pageInfo.pageNum}"></span>/<span th:text="${pageInfo.pages}"></span></p></div>
+							<div class="item"><a th:href="@{/admin/tags(pagenum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages})}">下一页</a></div>
+							<div class="right aligned item"><a th:href="@{/admin/tags(pagenum=${pageInfo.pages})}">尾页</a></div>
 						</div>
-						<div class="ui five wide column">
-							<a href="#" target="_blank">
-								<img class="ui rounded image" src="https://unsplash.it/800/400?image=1005" alt=""/>
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="ui padded vertical segment m-padded-tb-big <m-mobile-lr-clear></m-mobile-lr-clear>">
-					<div class="ui mobile reversed grid stackable">
-						<div class="ui eleven wide column">
-							<h3 class="ui header">夏目漱石心</h3>-
-							<p>如果我是想象的那种人，我就不会那么痛苦了.如果我是想象的那种人，我就不会那么痛苦了.如果我是想象的那种人，我就不会那么痛苦了</p>
-							<div class="ui stackable grid">
-								<div class="row">
-									<div class="eleven wide column">
-										<div class="ui mini horizontal link list">
-											<div class="item">
-												<img class="ui avatar image" src="https://unsplash.it/100/100?image=1005" alt=""/>
-												<div class="content">
-													<a class="header">温伟忠</a>
-												</div>
-											</div>
-											<div class="item">
-												<i class="calendar icon"></i> 2017-10-01
-											</div>
-											<div class="item">
-												<i class="eye icon"></i>2000
-											</div>
-										</div>
-									</div>
-									<div class="right aligned five wide column">
-										<a href="#" target="_blank" class="ui teal basic label m-padded-tiny m-text-thin">认知升级</a>
-									</div>
-								</div>
-								<div class="row">
-									<div class="column">
-										<a class="ui basic teal left pointing label m-padded-mini m-text-thin">方法论</a>
-									</div>
-								</div>
-								
-							</div>
-							
-						</div>
-						<div class="ui five wide column">
-							<a href="#" target="_blank">
-								<img class="ui rounded image" src="https://unsplash.it/800/400?image=1005" alt=""/>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-			
-			<!-- 分页 -->
-			<div class="ui bottom attached segment">
-				<div class="ui middle aligned two column grid">
-					<div class="column">
-						<button class="ui mini teal basic button">上一页</button>
-					</div>
-					<div class="right aligned column">
-						<button class="ui mini teal basic button">下一页</button>
-					</div>
-				</div>
+					</th>
+				</tr>
+				</tfoot>
+			</table>
+			<div class="ui success message" th:unless="${#strings.isEmpty(msg)}">
+				<i class="close icon"></i>
+				<div class="header">提示：</div>
+				<p th:text="${msg}">恭喜，操作成功！</p>
 			</div>
 		</div>
 	</div>
-	<!-- 底部 -->
-	<footer th:replace="_fragments :: footer"></footer>
-	<script th:replace="_fragments :: script"></script>
+</div>
+
+
+<!-- 底部 -->
+<footer th:replace="_fragments :: footer"></footer>
+<script th:replace="_fragments :: script"></script>
+
 <!-- 此处Bug还未处理 -->
 <script>
 	$('.menu.toggle').click(function (){
 		/* 将css样式进行切换 */
 		$('.m-item').toggleClass('m-mobile-hide');
 	});
+	$('.ui.dropdown').dropdown({
+		on: 'hover'
+	});
+
+	/*消息提示关闭初始化*/
+	$('.message.close')
+			.on('click', function (){
+				$(this)
+						.closest('.message')
+						.transition('fade');
+			});
 </script>
 </body>
 </html>

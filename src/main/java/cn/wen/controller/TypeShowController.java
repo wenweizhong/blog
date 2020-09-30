@@ -33,6 +33,7 @@ public class TypeShowController {
                         Model model) {
         PageHelper.startPage(pagenum, 100);//开启分页查询
         List<Type> types = typeService.getBlogType();
+        System.out.println(types);
         /*-1从导航点过来的*/
         if (id == -1) {
             id = types.get(0).getId();

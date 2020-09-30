@@ -35,6 +35,7 @@ public class LoginController {
                         RedirectAttributes attributes){
         System.out.println(username + password);
         User user = userService.checkUser(username, password);
+        System.out.println(user);
         if (user != null){
             user.setPassword(null);
             session.setAttribute("user", user);

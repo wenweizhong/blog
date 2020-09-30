@@ -37,14 +37,12 @@ public class TagShowController {
             id = tags.get(0).getId();
         }
         List<Blog> blogs = blogService.getByTagId(id);
-        for (Blog blog : blogs){
-            System.out.println(blog);
-        }
         PageInfo<Blog> pageInfo = new PageInfo<>(blogs);
         model.addAttribute("tags", tags);
         model.addAttribute("pageInfo", pageInfo);
         model.addAttribute("activeTagId", id);
         return "tags";
-
     }
+
+
 }
