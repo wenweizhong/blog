@@ -45,7 +45,7 @@ public class TypeController {
         return "admin/types-input";
     }
 
-    @PostMapping
+    @PostMapping("types")
     public String addType(Type type, RedirectAttributes attributes){
         Type t = typeService.getTypeByName(type.getName());
         if (t != null){
@@ -54,11 +54,11 @@ public class TypeController {
         }else{
             attributes.addFlashAttribute("msg", "修改成功");
         }
-        typeService.saveType(t);
+        typeService.saveType(type);
         return "redirect:/admin/types"; /*不能直接跳转到types页面, 否则不会显示type数据（没经过types方法）*/
     }
 
-    @PostMapping("/type/{id}")
+    @PostMapping("/types/{id}")
     public String editType(@PathVariable Long id, Type type, RedirectAttributes attributes){
         Type t = typeService.getTypeByName(type.getName());
         if (t != null) {
@@ -71,7 +71,7 @@ public class TypeController {
         return "redirect:/admin/types";
     }
 
-    @GetMapping("type/{id}delete")
+    @GetMapping("/types/{id}/delete")
     public String delete(@PathVariable Long id, RedirectAttributes attributes){
         typeService.deleteType(id);
         attributes.addFlashAttribute("msg", "删除成功");

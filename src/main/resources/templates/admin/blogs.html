@@ -6,18 +6,18 @@
 <body>
 	<!-- 导航 -->
 	<nav th:replace="admin/_fragments :: menu(1)"></nav>
-
-	<div class="ui attached pointing menu m-opacity-mini">
-		<div class="ui container">
-			<div class="right menu">
-				<a class="item" href="#" th:href="@{/admin/blogs/input}">发布</a>
-				<a class="active teal item" href="#" th:href="@{/admin/blogs}">列表</a>
-			</div>
-		</div>
-	</div>
+	<br>
 	<!-- 中间内容 -->
 	<div class="m-container-small m-padded-tb-big m-opacity-mini">
 		<div class="ui container">
+			<div class="ui attached pointing menu m-opacity-mini">
+				<div class="ui container">
+					<div class="right menu">
+						<a class="item" href="#" th:href="@{/admin/blogs/input}">发布</a>
+						<a class="active teal item" href="#" th:href="@{/admin/blogs}">列表</a>
+					</div>
+				</div>
+			</div>
 			<div class="ui secondary segment form">
 				<!--提交表单信息-->
 				<form th:action="@{/admin/blogs/search}" class="ui form segment" action="#" method="post">

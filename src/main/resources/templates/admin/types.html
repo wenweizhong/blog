@@ -7,18 +7,19 @@
 <body>
 	<!-- 导航 -->
 	<nav th:replace="admin/_fragments :: menu(2)"></nav>
+	<br>
 
-	<div class="ui attached pointing menu">
-		<div class="ui container">
-			<div class="right menu">
-				<a class="item" href="#" th:href="@{/admin/types/input}">新增</a>
-				<a class="active teal item" href="#" th:href="@{/admin/types}">列表</a>
-			</div>
-		</div>
-	</div>
 	<!-- 中间内容 -->
 	<div class="m-container-small m-padded-tb-big">
 		<div class="ui container">
+			<div class="ui attached pointing menu">
+				<div class="ui container">
+					<div class="right menu">
+						<a class="item" href="#" th:href="@{/admin/types/input}">新增</a>
+						<a class="active teal item" href="#" th:href="@{/admin/types}">列表</a>
+					</div>
+				</div>
+			</div>
 			<div class="table-container">
 				<table class="ui center aligned compact celled teal table">
 					<thead>
@@ -34,7 +35,7 @@
 						<td th:text="${type.name}"></td>
 						<td>
 							<a href="#" th:href="@{/admin/types/{id}/input(id=${type.id})}" class="ui mini teal basic button">修改</a>
-							<a href="#" th:href="@{/admin/types/{id}/delete(id=${type.id})}" class="ui mini red basic button">删除</a>
+							<a href="#" th:href="@{/admin/types/{id}/delete(id=${type.id})}" class="ui mini red basic button" onclick="return confirm('删除本分类及其属于分类的博客？')">删除</a>
 						</td>
 					</tr>
 					</tbody>
