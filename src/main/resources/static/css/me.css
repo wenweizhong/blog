@@ -3,13 +3,17 @@ body {
 	background: url("../images/alarm.png") no-repeat;
 	background-size:100%;
 	background-attachment: fixed;
-	background-attachment: fixed;
 }
+
+/*边距*/
 .m-padded-mini {
 	padding: 0.2em !important;
 }
 .m-padded-tiny {
 	padding: 0.3em !important;
+}
+.m-padded {
+	padding: 1em !important;
 }
 .m-padded-tb-mini {
 	padding-top: 0.2em !important;
@@ -111,6 +115,9 @@ body {
 .m-black {
 	color: #333333 !important;
 }
+.m-teal {
+	color: #00c4ff; !important;
+}
 
 /* position */
 .m-top-right {
@@ -118,6 +125,15 @@ body {
 	top: 0;
 	right: 0;
 }
+.m-fixed {
+	position: fixed !important;
+	z-index: 10 !important;
+}
+.m-right-bottom {
+	bottom: 0 !important;
+	right: 0 !important;
+}
+
 
 /*  */
 .m-mobile-show{

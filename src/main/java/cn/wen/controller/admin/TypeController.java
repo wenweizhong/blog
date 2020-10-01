@@ -54,6 +54,7 @@ public class TypeController {
         }else{
             attributes.addFlashAttribute("msg", "修改成功");
         }
+        System.out.println(type);
         typeService.saveType(type);
         return "redirect:/admin/types"; /*不能直接跳转到types页面, 否则不会显示type数据（没经过types方法）*/
     }
@@ -67,7 +68,7 @@ public class TypeController {
         }else{
             attributes.addFlashAttribute("msg", "修改成功");
         }
-        typeService.updateType(t);
+        typeService.updateType(type);
         return "redirect:/admin/types";
     }
 

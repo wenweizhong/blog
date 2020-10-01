@@ -8,9 +8,9 @@
 	<nav th:replace="admin/_fragments :: menu(1)"></nav>
 	<br>
 	<!-- 中间内容 -->
-	<div class="m-container-small m-padded-tb-big m-opacity-mini">
+	<div class="m-container m-padded-tb-big">
 		<div class="ui container">
-			<div class="ui attached pointing menu m-opacity-mini">
+			<div class="ui attached pointing menu">
 				<div class="ui container">
 					<div class="right menu">
 						<a class="item" href="#" th:href="@{/admin/blogs/input}">发布</a>
@@ -18,7 +18,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="ui secondary segment form">
+			<div class="ui attached secondary segment form">
 				<!--提交表单信息-->
 				<form th:action="@{/admin/blogs/search}" class="ui form segment" action="#" method="post">
 					<!--fields代表一个区域，Inline缩短区域的效果-->
@@ -82,7 +82,7 @@
 						</tbody>
 						<tfoot>
 							<tr class="ui center aligned" >
-								<th colspan="6">
+								<th colspan="7">
 									<div class="ui center aligned pagination menu">
 										<div class="left aligned item"><a th:href="@{/admin/blogs}">首页</a></div>
 										<div class="item"><a th:href="@{/admin/blogs(pagenum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1)}">上一页</a> </div>
