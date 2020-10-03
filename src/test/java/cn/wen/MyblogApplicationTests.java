@@ -8,6 +8,7 @@ import cn.wen.service.TagService;
 import cn.wen.service.TypeService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.apache.ibatis.javassist.NotFoundException;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -40,7 +41,10 @@ class MyblogApplicationTests {
 
     }
     @Test
-    void test(){
+    void test() throws NotFoundException {
+
+        Blog detailedBlog = blogService.getDetailedBlog((long) 16);
+        System.out.println(detailedBlog);
 
     }
 }

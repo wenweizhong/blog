@@ -89,16 +89,18 @@ public class BlogServiceImpl implements BlogService {
         blog.setUpdateTime(new Date());
         blog.setViews(0);
         /*保存博客*/
+        int saveBlog = blogDao.saveBlog(blog);
         Long id = blog.getId();
         /*保存博客后获得到自增id*/
         List<Tag> tags = blog.getTags();
         BlogAndTag blogAndTag = null;
         for (Tag tag : tags){
             /*新增时无法获取自增的id，在mybatis里面修改*/
+            /*----------------没有id值，*/
             blogAndTag = new BlogAndTag(tag.getId(), id);
             blogDao.saveBlogAndTag(blogAndTag);
         }
-        return blogDao.saveBlog(blog);
+        return saveBlog;
     }
 
     @Override

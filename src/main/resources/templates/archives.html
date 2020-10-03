@@ -7,7 +7,7 @@
 	<!-- 导航 -->
 	<nav th:replace="_fragments :: menu(4)"></nav>
 	<!-- 中间内容 -->
-	<div class="m-container-small m-padded-tb-big animated fadeIn">
+	<div id="waypoint" class="m-container-small m-padded-tb-big animated fadeIn">
 		<div class="ui container">
 			<!-- header -->
 			<div class="ui top attached padded segment">
@@ -37,6 +37,11 @@
 	<br>
 	<br>
 	<!-- 底部 -->
+	<div id="toolbar" class="m-padded m-fixed m-right-bottom" style="display: none">
+		<div class="ui vertical icon button ">
+			<div id="toTop-button" class="ui icon button" ><i class="chevron up icon"></i></div>
+		</div>
+	</div>
 
 	<footer th:replace="_fragments :: footer"></footer>
 
@@ -48,6 +53,20 @@
 	$('.menu.toggle').click(function (){
 		/* 将css样式进行切换 */
 		$('.m-item').toggleClass('m-mobile-hide');
+	});
+	var waypoint = new Waypoint({
+		element: document.getElementById('waypoint'),
+		handler: function(direction) {
+			if (direction == 'down') {
+				$('#toolbar').show(100);
+			} else {
+				$('#toolbar').hide(500);
+			}
+			console.log('Scrolled to waypoint!  ' + direction);
+		}
+	})
+	$('#toTop-button').click(function () {
+		$(window).scrollTo(0,500);
 	});
 </script>
 </body>

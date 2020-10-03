@@ -69,6 +69,7 @@ public class IndexController {
     @GetMapping("/blog/{id}")
     public String toLogin(@PathVariable Long id, Model model) throws NotFoundException {
         Blog blog = blogService.getDetailedBlog(id);
+        System.out.println(blog);
         model.addAttribute("blog", blog);
         return "blog";
     }
