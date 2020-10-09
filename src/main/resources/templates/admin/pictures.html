@@ -34,11 +34,11 @@
 				<tbody>
 				<tr th:each="picture, iterStat : ${pageInfo.list}">
 					<td th:text="${iterStat.count}"></td>
-					<td th:text="${picture.picturename}"></td>
-					<td th:text="${picture.picturetime}"></td>
+					<td th:text="${picture.pictureName}"></td>
+					<td th:text="${picture.pictureTime}"></td>
 					<td>
-						<a href="#" th:href="@{/admin/pictures/{id}/input(id=${picture.id})}" class="ui mini teal basic button">编辑</a>
-						<a href="#" th:href="@{/admin/pictures/{id}/delete(id=${picture.id})}" onclick="return confirm('你确定要删除该照片吗？')"
+						<a href="#" th:href="@{/admin/picture/{id}/input(id=${picture.id})}" class="ui mini teal basic button">编辑</a>
+						<a href="#" th:href="@{/admin/picture/{id}/delete(id=${picture.id})}" onclick="return confirm('你确定要删除该照片吗？')"
 						   class="ui mini red basic button">删除</a>
 					</td>
 				</tr>
@@ -51,8 +51,8 @@
 							<div class="item"><a th:href="@{/admin/pictures(pagenum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1)}"
 							th:unless="${pageInfo.isFirstPage}">上一页</a> </div>
 							<div class="item"><p><span th:text="${pageInfo.pageNum}"></span>/<span th:text="${pageInfo.pages}"></span></p></div>
-							<div class="item"><a th:href="@{/admin/pictures(pagenum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages})}">下一页</a></div>
-							<div class="right aligned item"><a th:href="@{/admin/pictures(pagenum=${pageInfo.pages})}">尾页</a></div>
+							<div class="item"><a th:href="@{/admin/pictures(pagenum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages})}" th:unless="${pageInfo.isLastPage}">下一页</a></div>
+							<div class="right aligned item"><a th:href="@{/admin/pictures(pagenum=${pageInfo.pages})}" >尾页</a></div>
 						</div>
 					</th>
 				</tr>

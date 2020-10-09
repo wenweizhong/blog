@@ -89,9 +89,10 @@ public class BlogServiceImpl implements BlogService {
         blog.setUpdateTime(new Date());
         blog.setViews(0);
         /*保存博客*/
+        /*保存博客后获得到自增id*/
+        //保存博客后  将blog的id更新后
         int saveBlog = blogDao.saveBlog(blog);
         Long id = blog.getId();
-        /*保存博客后获得到自增id*/
         List<Tag> tags = blog.getTags();
         BlogAndTag blogAndTag = null;
         for (Tag tag : tags){

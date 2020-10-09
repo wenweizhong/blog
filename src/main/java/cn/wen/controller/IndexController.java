@@ -42,9 +42,7 @@ public class IndexController {
         List<Type> allType = typeService.getBlogType();
         List<Tag> allTag = tagService.getBlogTag();
         List<Blog> recommendBlog = blogService.getAllRecommendBlog();
-
         /*获得分页结果对象*/
-        System.out.println(allBlog);
         PageInfo pageInfo = new PageInfo(allBlog);
         model.addAttribute("pageInfo", pageInfo);
         model.addAttribute("tags", allTag);

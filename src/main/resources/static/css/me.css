@@ -188,3 +188,124 @@ body {
 	left: 0px;
 	bottom: 0px;
 }
+.m-font-size-title{
+	font-size: 450%;
+	color: #FFFFFF;
+}
+.m-font-size-text-init-title{
+	font-size: 24px;
+	align-content: center;
+	font-family: STXingkai;
+}
+
+#picture-main {
+	-moz-transition: -moz-filter 0.5s ease, -webkit-filter 0.5s ease, -ms-filter 0.5s ease, -moz-filter 0.5s ease;
+	-webkit-transition: -moz-filter 0.5s ease, -webkit-filter 0.5s ease, -ms-filter 0.5s ease, -webkit-filter 0.5s ease;
+	-ms-transition: -moz-filter 0.5s ease, -webkit-filter 0.5s ease, -ms-filter 0.5s ease, -ms-filter 0.5s ease;
+	transition: -moz-filter 0.5s ease, -webkit-filter 0.5s ease, -ms-filter 0.5s ease, filter 0.5s ease;
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	-moz-flex-wrap: wrap;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+
+#picture-main .thumb {
+	-moz-transition: opacity 1.25s ease-in-out;
+	-webkit-transition: opacity 1.25s ease-in-out;
+	-ms-transition: opacity 1.25s ease-in-out;
+	transition: opacity 1.25s ease-in-out;
+	pointer-events: auto;
+	-webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+	opacity: 1;
+	overflow: hidden;
+	position: relative;
+}
+
+
+#picture-main .thumb {
+	-moz-transition-delay: 2.525s;
+	-webkit-transition-delay: 2.525s;
+	-ms-transition-delay: 2.525s;
+	transition-delay: 2.525s;
+	height: calc(40vh - 2em);
+	min-height: 20em;
+	width: 25%;
+}
+
+
+@media screen and (max-width: 1680px) {
+	#picture-main .thumb {
+		-moz-transition-delay: 2.075s;
+		-webkit-transition-delay: 2.075s;
+		-ms-transition-delay: 2.075s;
+		transition-delay: 2.075s;
+		height: calc(40vh - 2em);
+		min-height: 20em;
+		width: 33.33333%;
+	}
+}
+
+@media screen and (max-width: 1280px) {
+	#picture-main .thumb {
+		-moz-transition-delay: 1.625s;
+		-webkit-transition-delay: 1.625s;
+		-ms-transition-delay: 1.625s;
+		transition-delay: 1.625s;
+		height: calc(40vh - 2em);
+		min-height: 20em;
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 980px) {
+	#picture-main .thumb {
+		-moz-transition-delay: 2.075s;
+		-webkit-transition-delay: 2.075s;
+		-ms-transition-delay: 2.075s;
+		transition-delay: 2.075s;
+		height: calc(28.57143vh - 1.33333em);
+		min-height: 18em;
+		width: 50%;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#main .thumb {
+		-moz-transition-delay: 1.175s;
+		-webkit-transition-delay: 1.175s;
+		-ms-transition-delay: 1.175s;
+		transition-delay: 1.175s;
+		height: calc(40vh - 2em);
+		min-height: 18em;
+		width: 100%;
+	}
+}
+
+.picture-zmki_px{
+	border: 0;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	object-fit: cover;
+	cursor: pointer;
+	outline: 0px;
+	background-image: url(https://a-oss.zmki.cn/2020/20200212-fcf30f3d33625.gif);
+	background-size: 100% 100%;
+}
+.m-picture-text{
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+	color: white;
+	font-size:large;
+	font-weight: bold;
+	/*font-family: '_GB2312 FangSong_GB2312';*/
+}

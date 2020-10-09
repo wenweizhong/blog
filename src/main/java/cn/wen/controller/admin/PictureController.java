@@ -49,11 +49,9 @@ public class PictureController {
         return "admin/pictures-input";
     }
 
-    @PostMapping("pictures")
-   public String addPicture(@Validated Picture picture, BindingResult result, RedirectAttributes attributes){
-        if (result.hasErrors()){
-            return "admin/pictures-input";
-        }
+    @PostMapping("/pictures")
+   public String addPicture(Picture picture, RedirectAttributes attributes){
+        System.out.println(picture.getPictureName());
         if (pictureService.savePicture(picture) == 0){
             attributes.addFlashAttribute("msg", "新增失败");
         }else{
@@ -63,11 +61,11 @@ public class PictureController {
     }
 
     @PostMapping("/pictures/{id}")
-    public String editPicture(@Validated Picture picture, RedirectAttributes attributes){
+    public String editPicture(Picture picture, RedirectAttributes attributes){
         if (pictureService.updatePicture(picture) == 0){
-            attributes.addFlashAttribute("msg", "新增失败");
+            attributes.addFlashAttribute("msg", "修改失败");
         }else{
-            attributes.addFlashAttribute("msg", "新增成功");
+            attributes.addFlashAttribute("msg", "修改成功");
         }
         return "redirect:/admin/pictures";
     }

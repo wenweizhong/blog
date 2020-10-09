@@ -63,13 +63,13 @@
       <div class="ui bottom attached segment">
         <div class="ui middle aligned three column grid">
           <div class="left aligned column">
-            <button class="ui mini teal basic button" th:href="@{/(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1)}">上一页</button>
+            <a class="ui mini teal basic button" th:href="@{/(pageNum=${pageInfo.hasPreviousPage}?${pageInfo.prePage}:1)}">上一页</a>
           </div>
           <div class="center aligned column">
             <p><span th:text="${pageInfo.pageNum}"></span>/<span th:text="${pageInfo.pages}"></span></p>
           </div>
           <div class="right aligned column">
-            <button class="ui mini teal basic button" th:href="@{/(pageNum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages})}">下一页</button>
+            <a class="ui mini teal basic button" th:href="@{/(pageNum=${pageInfo.hasNextPage}?${pageInfo.nextPage}:${pageInfo.pages})}">下一页</a>
           </div>
         </div>
       </div>
