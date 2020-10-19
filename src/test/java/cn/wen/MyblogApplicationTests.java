@@ -18,33 +18,4 @@ import java.util.Map;
 
 @SpringBootTest
 class MyblogApplicationTests {
-
-    @Autowired
-    private BlogService blogService;
-
-    @Autowired
-    private TagService tagService;
-
-    @Autowired
-    private TypeService typeService;
-    @Test
-    void contextLoads() {
-    }
-    @Test
-    void testIndex(){
-        int pagenum = 1;
-        PageHelper.startPage(pagenum, 8);
-        List<Blog> allBlog = blogService.getIndexBlog();
-        /*获得分页结果对象*/
-        PageInfo pageInfo = new PageInfo(allBlog);
-        System.out.println(pageInfo.getTotal());
-
-    }
-    @Test
-    void test() throws NotFoundException {
-
-        Blog detailedBlog = blogService.getDetailedBlog((long) 16);
-        System.out.println(detailedBlog);
-
-    }
 }

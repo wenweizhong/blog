@@ -1,3 +1,4 @@
+
 spring:
   #配置模板引擎
   thymeleaf:
@@ -20,3 +21,5 @@ logging:
     com.blog:
   file:
     path: log/blog.log
+server:
+  port: 8081

@@ -12,7 +12,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import scala.reflect.internal.Mode;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
