@@ -57,8 +57,6 @@ public class IndexController {
         PageHelper.startPage(pagenum, 5);
         List<Blog> searchBlog = blogService.getSearchBlog(query);
         PageInfo pageInfo = new PageInfo(searchBlog);
-        System.out.println(searchBlog);
-        System.out.println(pageInfo);
         model.addAttribute("pageInfo", pageInfo);
         model.addAttribute("query", query);
         return "search";
@@ -67,7 +65,6 @@ public class IndexController {
     @GetMapping("/blog/{id}")
     public String toLogin(@PathVariable Long id, Model model) throws NotFoundException {
         Blog blog = blogService.getDetailedBlog(id);
-        System.out.println(blog);
         model.addAttribute("blog", blog);
         return "blog";
     }

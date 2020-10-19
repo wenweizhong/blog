@@ -18,7 +18,6 @@ public class PictureShowController {
     @GetMapping("/picture")
     public String pictures(Model model){
         model.addAttribute("pictures", pictureService.listPicture());
-        System.out.println(pictureService.listPicture());
         return "picture";
     }
 }

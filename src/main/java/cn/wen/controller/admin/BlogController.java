@@ -88,7 +88,6 @@ public class BlogController {
         blog.setType(typeService.getType(blog.getType().getId()));
         //设置blog中typeId属性
         blog.setTypeId(blog.getType().getId());
-        System.out.println(blog.getTagIds());
         //给blog中的List<Tag>赋值
         blog.setTags(tagService.getTagByString(blog.getTagIds()));
         if (blog.getId() == null) {   //id为空，则为新增

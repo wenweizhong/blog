@@ -33,7 +33,6 @@ public class LoginController {
                         @RequestParam String password,
                         HttpSession session,
                         RedirectAttributes attributes){
-        System.out.println(username + password);
         User user = userService.checkUser(username, password);
         System.out.println(user);
         if (user != null){
