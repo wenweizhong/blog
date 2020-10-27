@@ -25,7 +25,7 @@
 
 		<article class="thumb" th:each="picture : ${pictures}">
 			<div class="ma5-gallery">
-				<div class="rthumbnail">
+				<div id="gallery" class="rthumbnail">
 					<a href="../static/images/backimg1.jpg" th:href="@{${picture.pictureAddress}}">
 						<img class="picture-zmki_px" src="../static/images/backimg1.jpg" th:src="@{${picture.pictureAddress}}">
 					</a>
@@ -45,15 +45,16 @@
 
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
-	<script type="text/javascript" src="../static/lib/picture/js/jkresponsivegallery.js" th:src="@{/lib/picture/js/jkresponsivegallery.js}"/>
+	<script type="text/javascript" src="../static/lib/picture/js/jkresponsivegallery.js" th:src="@{/lib/picture/js/jkresponsivegallery.js}"></script>
 <!-- 此处Bug还未处理 -->
-<script>
+<script type="text/javascript">
 	$('.menu.toggle').click(function (){
 		/* 将css样式进行切换 */
 		$('.m-item').toggleClass('m-mobile-hide');
 	});
 	$(function() {
-		$('.rthumbnail').responsivegallery();
+		$('.gallery').responsivegallery();
+		console.log("》》");
 	});
 </script>
 </body>
