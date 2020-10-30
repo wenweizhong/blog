@@ -34,7 +34,6 @@ public class LoginController {
                         HttpSession session,
                         RedirectAttributes attributes){
         User user = userService.checkUser(username, password);
-        System.out.println(user);
         if (user != null){
             user.setPassword(null);
             session.setAttribute("user", user);

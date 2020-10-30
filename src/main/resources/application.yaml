@@ -22,4 +22,4 @@ logging:
   file:
     path: log/blog.log
 server:
-  port: 8084
+  port: 8081

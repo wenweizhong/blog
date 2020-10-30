@@ -39,13 +39,7 @@
 										th:text="${type.name}" class="item" data-value="1">错误日志</div>
 									</div>
 								</div>
-								<button id="clear-btn" class="ui compact button">clear</button>
-							</div>
-						</div>
-						<div class="field">
-							<div class="ui checkbox">
-								<input type="checkbox" id="recommend" name="recommend" />
-								<label for="recommend">推荐</label>
+								<a id="clear-btn" class="ui compact button" th:href="@{/admin/blogs}">clear</a>
 							</div>
 						</div>
 						<div class="field">
@@ -103,8 +97,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- 底部 -->
-	<footer th:replace="admin/_fragments :: footer"></footer>
 
 	<!--scripts-->
 	<th:block th:replace="admin/_fragments :: script"></th:block>

@@ -53,7 +53,36 @@
 		</div>
 	</div>
 	<!-- 底部 -->
-	<footer th:replace="_fragments :: footer"></footer>
+	<footer  class="ui inverted vertical segment m-padded-tb-maxssive m-opacity-footer animated fadeInUp">
+		<div class="ui center aligned container">
+			<div class="ui inverted divided stackable grid">
+				<div class="three wide column">
+					<div class="ui inverted link list">
+						<div class="item">
+							<img class="ui rounded image" th:src="@{images/wechat.png}" alt="" style="width: 100px">
+						</div>
+					</div>
+				</div>
+				<div class="three wide column">
+					<h4 class="ui inverted header m-text-spaced">联系我</h4>
+					<div class="ui inverted link list">
+						<a href="#" class="item">Email:183366484@qq.com</a>
+						<a href="#" class="item">QQ:183366484</a>
+					</div>
+				</div>
+				<div class="ten wide column">
+					<h4 class="ui inverted header m-text-spaced">喜欢的话</h4>
+					<p class="m-text-lined m-text-spaced m-text-thin">
+						我爱她，若我是她所希望的那种人，我就不会这么痛苦了。
+					</p>
+				</div>
+			</div>
+			<div class="ui inverted section divider"></div>
+			<p class="m-text-lined m-text-spaced m-text-thin">
+				粤ICP备2020102794号
+			</p>
+		</div>
+	</footer>
 
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
