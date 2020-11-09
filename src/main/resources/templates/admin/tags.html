@@ -36,7 +36,7 @@
 					<td th:text="${tag.name}"></td>
 					<td>
 						<a href="#" th:href="@{/admin/tags/{id}/input(id=${tag.id})}" class="ui mini teal basic button">修改</a>
-						<a href="#" th:href="@{/admin/tags/{id}/delete(id=${tag.id})}" class="ui mini red basic button">删除</a>
+						<a href="#" th:href="@{/admin/tags/{id}/delete(id=${tag.id})}" class="ui mini red basic button" onclick="return confirm('删除本标签？')">删除</a>
 					</td>
 				</tr>
 				</tbody>

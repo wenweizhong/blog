@@ -48,7 +48,7 @@
         t.name typename, t.id typeid,
         u.nickname, u.avatar
         from t_blog b, t_type t, t_user u
-        where b.type_id = t.id and  u.id = b.user_id order by b.update_time desc
+        where b.type_id = t.id and  u.id = b.user_id and b.published = 1 order by b.update_time desc
     </select>
 
     <select id="getAllBlog" resultMap="blog">  /*后台博客展示*/
@@ -63,7 +63,7 @@
         t.name typename, t.id typeid,
         u.nickname, u.avatar
         from t_blog b, t_type t, t_user u
-        where b.type_id = t.id and u.id = b.user_id and b.type_id = #{typeId} order by b.update_time desc
+        where b.type_id = t.id and u.id = b.user_id and b.type_id = #{typeId} and b.published = 1 order by b.update_time desc
     </select>
 
     <select id="getByTagId" resultMap="blog">
@@ -73,11 +73,12 @@
         u.nickname, u.avatar
         from t_blog b, t_type t, t_user u, t_blog_tags tb, t_tag t1
         where b.type_id = t.id and u.id = b.user_id and tb.blog_id = b.id and tb.tag_id = t1.id and t1.id = #{tagId}
+        and b.published = 1
         order by b.update_time desc
     </select>
 
     <select id="getAllRecommendBlog" resultMap="blog">
-        select id, title, recommend from t_blog order by update_time desc;
+        select id, title, recommend from t_blog where recommend = 1 and published = 1 order by update_time desc;
     </select>
 
     <select id="getBlog" resultMap="blog"> /*后台展示博客*/
@@ -152,12 +153,12 @@
 
 
     <select id="findGroupYear" resultType="String">
-        select DATE_FORMAT(b.update_time, '%Y') from t_blog b order by b.update_time desc
+        select DATE_FORMAT(b.update_time, '%Y') from t_blog b where b.published = 1 order by b.update_time desc
     </select>
 
     <select id="findByYear" resultMap="blog">
         select b.title, b.update_time, b.id, b.flag
         from t_blog b
-        where DATE_FORMAT(b.update_time, "%Y") = #{year}
+        where DATE_FORMAT(b.update_time, "%Y") = #{year} and b.published = 1
     </select>
 </mapper>
