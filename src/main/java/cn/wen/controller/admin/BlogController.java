@@ -7,6 +7,7 @@ import cn.wen.service.TagService;
 import cn.wen.service.TypeService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.apache.ibatis.javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -70,8 +71,9 @@ public class BlogController {
     }
 
     @GetMapping("/blogs/{id}/input") //去编辑博客页面
-    public String toEditBlog(@PathVariable Long id, Model model){
+    public String toEditBlog(@PathVariable Long id, Model model) throws NotFoundException {
         Blog blog = blogService.getBlog(id);
+        blog.setType(typeService.getType(blog.getTypeId()));
         blog.init();   //将tags集合转换为tagIds字符串
         model.addAttribute("blog", blog);     //返回一个blog对象给前端th:object
         setTypeAndTag(model);
